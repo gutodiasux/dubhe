@@ -1,8 +1,15 @@
 import { Box, Button, Flex, FormControl, FormLabel, Input } from '@chakra-ui/react'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
+import { FormEvent } from 'react'
 
 function Login() {
+  const router = useRouter()
+  const handleUserLogin = (e: FormEvent) => {
+    e.preventDefault()
+    router.push('/dashboard')
+  }
 
   return (
     <>
@@ -28,7 +35,7 @@ function Login() {
               <Input name='password' backgroundColor={'gray.200'} />
             </FormControl>
             <Flex width={'100%'} justify={'flex-end'}>
-              <Button backgroundColor={'#F7F700'} _hover={{ backgroundColor: '#F7F70095' }} color={'#293443'}>
+              <Button backgroundColor={'#F7F700'} _hover={{ backgroundColor: '#F7F70095' }} color={'#293443'} onClick={handleUserLogin}>
                 Fazer login
               </Button>
             </Flex>
