@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react'
 import { Head, Html, Main, NextScript } from 'next/document'
 
 export default function Document() {
@@ -6,10 +7,10 @@ export default function Document() {
       <Head>
         <link rel="icon" type="image/x-icon" href="/favicon.svg" />
       </Head>
-      <body>
+      <Box as='body' bg={'#242d3a'}>
         <Main />
         <NextScript />
-      </body>
+      </Box>
     </Html>
   )
 }

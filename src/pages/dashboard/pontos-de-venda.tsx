@@ -1,18 +1,19 @@
 import { Heading } from '@chakra-ui/react'
 import Head from 'next/head'
+import React from 'react'
 import Layout from '../../components/layout'
 
-function Dashboard() {
+function PontosDeVenda() {
   return (
     <>
       <Head>
-        <title>Dubhe - Dashboard</title>
+        <title>Dubhe - Pontos de Venda</title>
       </Head>
       <Layout>
-        <Heading color={'gray.200'}>Dashboard</Heading>
+        <Heading color={'gray.200'}>Pontos de Venda</Heading>
       </Layout>;
     </>
   )
 }
 
-export default Dashboard
+export default PontosDeVenda

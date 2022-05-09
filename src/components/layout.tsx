@@ -1,5 +1,5 @@
-import { Box } from '@chakra-ui/react'
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
+import SimpleSidebar from './sidebar-menu'
 
 type LayoutProps = {
   children: ReactNode
@@ -7,9 +7,9 @@ type LayoutProps = {
 
 function Layout({ children }: LayoutProps) {
   return (
-    <Box height={'100vh'} backgroundColor={'#293443'}>
+    <SimpleSidebar>
       {children}
-    </Box>
+    </SimpleSidebar>
   )
 }
 

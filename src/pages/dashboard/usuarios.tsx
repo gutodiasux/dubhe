@@ -1,18 +1,19 @@
 import { Heading } from '@chakra-ui/react'
 import Head from 'next/head'
+import React from 'react'
 import Layout from '../../components/layout'
 
-function Dashboard() {
+function Usuarios() {
   return (
     <>
       <Head>
-        <title>Dubhe - Dashboard</title>
+        <title>Dubhe - Usuários</title>
       </Head>
       <Layout>
-        <Heading color={'gray.200'}>Dashboard</Heading>
+        <Heading color={'gray.200'}>Usuários</Heading>
       </Layout>;
     </>
   )
 }
 
-export default Dashboard
+export default Usuarios

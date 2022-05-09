@@ -1,8 +1,9 @@
-import { Box, Button, Flex, FormControl, FormLabel, Input } from '@chakra-ui/react'
+import { Box, Button, Flex } from '@chakra-ui/react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { FormEvent } from 'react'
+import CustomInput from '../components/form/custom-input'
 
 function Login() {
   const router = useRouter()
@@ -26,17 +27,11 @@ function Login() {
         >
           <Image src='/welcome-to-dubhe.svg' height={134} width={121} objectFit='contain' alt='Bem vindo ao Dubhe' />
           <Flex as={'form'} width={'320px'} flexDirection={'column'} gap={'16px'} backgroundColor={'#242d3a'} padding={'16px'} borderRadius={'lg'}>
-            <FormControl>
-              <FormLabel htmlFor='email' color={'gray.200'} fontWeight={'normal'}>Email</FormLabel>
-              <Input name='email' backgroundColor={'gray.200'} />
-            </FormControl>
-            <FormControl>
-              <FormLabel htmlFor='password' color={'gray.200'} fontWeight={'normal'}>Senha</FormLabel>
-              <Input name='password' backgroundColor={'gray.200'} />
-            </FormControl>
+            <CustomInput name='Email' label='Email' type={'text'} />
+            <CustomInput name='password' label='Senha' type={'text'} />
             <Flex width={'100%'} justify={'flex-end'}>
               <Button backgroundColor={'#F7F700'} _hover={{ backgroundColor: '#F7F70095' }} color={'#293443'} onClick={handleUserLogin}>
-                Fazer login
+                Entrar
               </Button>
             </Flex>
           </Flex>
