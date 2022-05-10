@@ -1,7 +1,7 @@
 import { Button, Flex, Grid, Heading, useDisclosure } from '@chakra-ui/react'
 import Head from 'next/head'
 import React from 'react'
-import SellerlProfileWithImage from '../../components/cards/seller-card'
+import ProductAddToCart from '../../components/cards/product-card'
 import Layout from '../../components/layout'
 import { AddSellerModal } from '../../components/modals'
 
@@ -24,11 +24,11 @@ function PontosDeVenda() {
             color={'#293443'}
             onClick={onOpen}
           >
-            Adicionar Ponto de Venda
+            Adicionar Produto
           </Button>
         </Flex>
         <Grid templateColumns={'repeat(3, 1fr)'} my={'32px'}>
-          <SellerlProfileWithImage />
+          <ProductAddToCart />
         </Grid>
       </Layout>;
       <AddSellerModal isOpen={isOpen} onClose={onClose} />

@@ -20,9 +20,6 @@ const options = {
   grid: {
     show: false
   },
-  dataLabels: {
-    enabled: false
-  },
   tooltip: {
     enabled: false
   },
@@ -66,7 +63,7 @@ function Dashboard() {
             <Chart type='area' options={options} series={series} height={250} />
           </GridItem>
           <GridItem p={'16px'} bg='gray.700' borderRadius={'lg'}>
-            <Heading color={'gray.300'} fontSize={'lg'} fontWeight={'normal'}>Usuários registrados</Heading>
+            <Heading color={'gray.300'} fontSize={'lg'} fontWeight={'normal'}>Vendas realizadas</Heading>
             <Chart type='area' options={options} series={series} height={250} />
           </GridItem>
         </Grid>

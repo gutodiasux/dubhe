@@ -1,0 +1,92 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String       @id @default(auto()) @map("_id") @db.ObjectId
+  name         String
+  email        String       @unique
+  senha        String
+  surname      String
+  sex          SEX
+  user_profile UserProfile?
+
+  created_at DateTime @default(now())
+
+  @@map("user")
+}
+
+enum SEX {
+  MALE
+  FEMALE
+}
+
+model UserProfile {
+  id                   String  @id @default(auto()) @map("_id") @db.ObjectId
+  age                  String
+  cpf                  String
+  phone                String
+  accepted_term_of_use Boolean @default(false)
+
+  user    User   @relation(fields: [user_id], references: [id])
+  user_id String @unique @db.ObjectId
+
+  @@map("user_profile")
+}
+
+model Category {
+  id   String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+
+  @@map("category")
+}
+
+model Activity {
+  id   String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+
+  @@map("activity")
+}
+
+model Seller {
+  id            String @id @default(auto()) @map("_id") @db.ObjectId
+  business_name String
+
+  @@map("seller")
+}
+
+model SellerProfile {
+  id              String          @id @default(auto()) @map("_id") @db.ObjectId
+  location_mark   String
+  business_phone  String
+  business_email  String
+  seller_products SellerProduct[]
+
+  @@map("seller_profile")
+}
+
+model SellerProduct {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  name  String
+  price String
+
+  seller_profile    SellerProfile @relation(fields: [seller_profile_id], references: [id])
+  seller_profile_id String        @db.ObjectId
+
+  @@map("seller_product")
+}
+
+model ProductSchedule {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  schedule String[]
+
+  @@map("product_schedule")
+}

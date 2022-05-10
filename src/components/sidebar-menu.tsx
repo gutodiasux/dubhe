@@ -12,7 +12,7 @@ import Image from 'next/image'
 import NavLink from 'next/link'
 import React, { ReactNode } from 'react'
 import { IconType } from 'react-icons'
-import { FiSettings } from 'react-icons/fi'
+import { FiSettings, FiShoppingCart } from 'react-icons/fi'
 import { HiOutlineUsers } from 'react-icons/hi'
 import { MdOutlineCategory } from 'react-icons/md'
 import { RiDashboardLine, RiStore2Line } from 'react-icons/ri'
@@ -27,6 +27,7 @@ interface LinkItemProps {
 const LinkItems: Array<LinkItemProps> = [
   { name: 'Dashboard', icon: RiDashboardLine, href: '/dashboard' },
   { name: 'Pontos de Venda', icon: RiStore2Line, href: '/dashboard/pontos-de-venda' },
+  { name: 'Produtos', icon: FiShoppingCart, href: '/dashboard/produtos' },
   { name: 'Categorias', icon: MdOutlineCategory, href: '/dashboard/categorias' },
   { name: 'Usuários', icon: HiOutlineUsers, href: '/dashboard/usuarios' },
   { name: 'Configurações', icon: FiSettings, href: '/dashboard/configuracoes' },
