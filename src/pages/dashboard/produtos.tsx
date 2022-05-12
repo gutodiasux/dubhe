@@ -27,7 +27,7 @@ function PontosDeVenda() {
             Adicionar Produto
           </Button>
         </Flex>
-        <Grid templateColumns={'repeat(3, 1fr)'} my={'32px'}>
+        <Grid templateColumns={'repeat(4, 1fr)'} my={'32px'}>
           <ProductAddToCart />
         </Grid>
       </Layout>;

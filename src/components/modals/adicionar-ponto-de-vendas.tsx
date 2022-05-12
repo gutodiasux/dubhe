@@ -11,7 +11,7 @@ import {
   ModalOverlay
 } from '@chakra-ui/react'
 import React from 'react'
-import CustomInput from '../form/custom-input'
+import CustomInput from '../forms/custom-input'
 
 type AddSellerModal = {
   isOpen: boolean
