@@ -12,22 +12,14 @@ const handler = nextConnect<NextApiRequest, NextApiResponse>({
   }
 })
 
-handler.post(async (req, res) => {
-  const { business_name, business_phone, business_email, location_mark } = req.body
-  await prisma.seller.create({
-    data: {
-      business_name: business_name,
-      seller_profile: {
-        create: {
-          business_email: business_email,
-          business_phone: business_phone,
-          location_mark: location_mark
-        }
-      }
+handler.get(async (req, res) => {
+  const sellers = await prisma.seller.findMany({
+    include: {
+      seller_profile: true
     }
   })
 
-  return res.status(201).end()
+  return res.status(200).json(sellers)
 })
 
 export default handler

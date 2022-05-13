@@ -57,8 +57,9 @@ model Activity {
 }
 
 model Seller {
-  id            String @id @default(auto()) @map("_id") @db.ObjectId
-  business_name String
+  id             String         @id @default(auto()) @map("_id") @db.ObjectId
+  business_name  String
+  seller_profile SellerProfile?
 
   @@map("seller")
 }
@@ -69,6 +70,9 @@ model SellerProfile {
   business_phone  String
   business_email  String
   seller_products SellerProduct[]
+
+  seller    Seller @relation(fields: [seller_id], references: [id])
+  seller_id String @unique @db.ObjectId
 
   @@map("seller_profile")
 }
