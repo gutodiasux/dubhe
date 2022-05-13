@@ -13,11 +13,7 @@ const handler = nextConnect<NextApiRequest, NextApiResponse>({
 })
 
 handler.get(async (req, res) => {
-  const sellers = await prisma.seller.findMany({
-    include: {
-      seller_profile: true
-    }
-  })
+  const sellers = await prisma.seller.findMany({})
 
   return res.status(200).json(sellers)
 })

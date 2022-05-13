@@ -10,11 +10,9 @@ import { api } from '../../infra/api'
 type Seller = {
   id: string
   business_name: string
-  seller_profile: {
-    business_email: string
-    business_phone: string
-    location_mark: string
-  }
+  business_email: string
+  business_phone: string
+  location_mark: string
 }
 
 function PontosDeVenda() {
@@ -70,7 +68,7 @@ function PontosDeVenda() {
                     <Tr key={seller.id}>
                       <Td color={'gray.400'}>{seller.business_name}</Td>
                       <Td color={'gray.400'}>{seller.business_name}</Td>
-                      <Td color={'gray.400'}>{seller.seller_profile.business_phone}</Td>
+                      <Td color={'gray.400'}>{seller.business_phone}</Td>
                       <Td>
                         <HStack spacing={'16px'} justify={'flex-end'}>
                           <IconButton aria-label='Ver' colorScheme={'blue'} icon={<RiEyeLine />} />

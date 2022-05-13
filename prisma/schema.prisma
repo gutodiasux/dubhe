@@ -57,24 +57,14 @@ model Activity {
 }
 
 model Seller {
-  id             String         @id @default(auto()) @map("_id") @db.ObjectId
-  business_name  String
-  seller_profile SellerProfile?
-
-  @@map("seller")
-}
-
-model SellerProfile {
   id              String          @id @default(auto()) @map("_id") @db.ObjectId
+  business_name   String
   location_mark   String
   business_phone  String
   business_email  String
   seller_products SellerProduct[]
 
-  seller    Seller @relation(fields: [seller_id], references: [id])
-  seller_id String @unique @db.ObjectId
-
-  @@map("seller_profile")
+  @@map("seller")
 }
 
 model SellerProduct {
@@ -82,8 +72,8 @@ model SellerProduct {
   name  String
   price String
 
-  seller_profile    SellerProfile @relation(fields: [seller_profile_id], references: [id])
-  seller_profile_id String        @db.ObjectId
+  seller_profile Seller @relation(fields: [seller_id], references: [id])
+  seller_id      String @db.ObjectId
 
   @@map("seller_product")
 }
