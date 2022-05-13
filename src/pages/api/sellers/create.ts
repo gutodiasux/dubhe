@@ -18,14 +18,16 @@ handler.post(async (req, res) => {
   await prisma.seller.create({
     data: {
       business_name: business_name,
-      seller_profile: {
-        create: {
-          business_email: business_email,
-          business_phone: business_phone,
-          location_mark: location_mark
-        }
-      }
     }
+  }).then(async (seller) => {
+    await prisma.sellerProfile.create({
+      data: {
+        seller_id: seller.id,
+        business_email: business_email,
+        business_phone: business_phone,
+        location_mark: location_mark
+      }
+    })
   })
 
   return res.status(201).end()
