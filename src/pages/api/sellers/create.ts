@@ -12,6 +12,7 @@ const handler = nextConnect<NextApiRequest, NextApiResponse>({
   }
 })
 
+
 handler.post(async (req, res) => {
   const { business_name, business_phone, business_email, location_mark } = req.body
   await prisma.seller.create({

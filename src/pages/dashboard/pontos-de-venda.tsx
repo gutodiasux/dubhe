@@ -23,6 +23,8 @@ function PontosDeVenda() {
     const { data } = await api.get('/sellers/list')
     console.log(data)
     return data
+  }, {
+    staleTime: 1000 * 60 * 5
   })
 
   return (

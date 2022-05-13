@@ -53,8 +53,6 @@ export function AddSellerModal({ isOpen, onClose }: AddSellerModal) {
 
   const handleCreateSeller = async (values: any) => {
     await mutation.mutateAsync(values)
-    // await api.post('/sellers/create', values)
-    //console.log(values)
   }
 
   return (

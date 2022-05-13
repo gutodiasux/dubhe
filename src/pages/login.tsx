@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { FormEvent } from 'react'
-import CustomInput from '../components/form/custom-input'
+import { CustomInput } from '../components/forms/custom-input'
 
 function Login() {
   const router = useRouter()
